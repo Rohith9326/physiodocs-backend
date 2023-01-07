@@ -9,7 +9,9 @@ import { getEvironmentOptions } from './utils/environment/environment.util';
     app.setGlobalPrefix('physiodocs-service');
     app.enableCors();
     await app.listen(APP_PORT);
+    console.log("app is listining to port :",APP_PORT);
   } catch (error) {
     throw new Error(error);
+    console.log("Error:",error);
   }
 })();
