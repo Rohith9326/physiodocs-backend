@@ -5,7 +5,7 @@ import { getEvironmentOptions } from './utils/environment/environment.util';
 (async () => {
   try {
     const { APP_PORT } = getEvironmentOptions();
-    const app = await NestFactory.create(AppModule);
+    const app = await NestFactory.create(AppModule,{ logger: true });
     app.setGlobalPrefix('physiodocs-service');
     app.enableCors();
     await app.listen(APP_PORT);
